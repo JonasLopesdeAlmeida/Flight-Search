@@ -13,6 +13,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="FlightConnectios")
 public class FlightConnections implements Serializable{
@@ -25,7 +27,8 @@ public class FlightConnections implements Serializable{
     private String airportDeparture;
     private String timeIn;
     private String timeOut;
-       
+    
+    @JsonIgnore
     @ManyToMany
 	@JoinTable(name = "FlightConnections_to_Flights", joinColumns = @JoinColumn(name = "id_flightConnections"), inverseJoinColumns = @JoinColumn(name = "id_flight"))
 
