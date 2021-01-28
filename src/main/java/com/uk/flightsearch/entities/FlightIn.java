@@ -13,7 +13,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.uk.flightsearch.enums.FlightStatus;
 
 @Entity
@@ -37,13 +36,15 @@ public class FlightIn {
 	private List<FlightConnections> flightconnectionsin = new ArrayList<>();
 	
 	
-	
-    public FlightIn() {
+	public FlightIn() {
 		
 	}
 	
+    public FlightIn(String departureIn ) {
+		this.departureIn = departureIn;
+	}
 	
-
+	
 	public FlightIn(Long id, String departureIn, String timeDepartureIn, String destinationIn, String timeDestinationIn,
 			Date dateIn, FlightStatus flightstatus) {
 		super();

@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.uk.flightsearch.DTO.FlightInDTO;
+import com.uk.flightsearch.DTO.FlightInNewDTO;
 import com.uk.flightsearch.entities.FlightIn;
 import com.uk.flightsearch.repositories.FlightInRepository;
 import com.uk.flightsearch.services.exceptions.ObjectNotFoundException;
@@ -26,7 +27,8 @@ public class FlightInService {
 		"Flight not found! Id: " + id + ", Type: " + FlightIn.class.getName()));
 		}
     
-
+    
+    
   	public Page<FlightIn> findFlightsIn(Integer page, Integer linesPerPage, String orderBy1,String orderBy2,String orderBy3, String direction){
   		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction),
   				orderBy1,orderBy2,orderBy3);
@@ -45,6 +47,21 @@ public class FlightInService {
   				
   				
   		}
+  	
+  	
+  	public Page<FlightIn> departuresAndDestinationsList(Integer page, Integer linesPerPage, String orderBy, String direction){
+  		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction),
+  				orderBy);
+  		return flighintrepo.findAll(pageRequest);
+  		
+  	}
+  	
+  	public FlightIn fromDTO(FlightInNewDTO flightInOuTDto) {
+  		return new FlightIn(flightInOuTDto.getDepartureIn());
+  				
+  				
+  		}
+  	
   	
 	
 }
