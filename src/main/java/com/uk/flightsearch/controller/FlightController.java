@@ -25,8 +25,8 @@ public class FlightController {
 
 		Flight flight = flightservice.find(id);
 		return ResponseEntity.ok().body(flight);
-
 	}
+    
     
     @GetMapping("/search")
   	public ResponseEntity<Page<FlightDTO>> findPage(

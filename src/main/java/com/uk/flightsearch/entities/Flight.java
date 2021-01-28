@@ -27,20 +27,13 @@ public class Flight implements Serializable{
 	private String timeDepartureIn;
 	private String destinationIn;
 	private String timeDestinationIn;
-	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dateIn;
-	
 	private String departureOut;
 	private String timeDepartureOut;
 	private String destinationOut;
 	private String timeDestinationOut;
-	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dateOut;
 	
-
-
 	@ManyToMany(mappedBy = "flights")
 	private List<FlightConnections> flightconnections = new ArrayList<>();
 	

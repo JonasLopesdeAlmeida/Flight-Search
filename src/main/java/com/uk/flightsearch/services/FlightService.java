@@ -28,15 +28,12 @@ public class FlightService {
     
 
   	public Page<Flight> findFlights(Integer page, Integer linesPerPage, String orderBy1,String orderBy2, String direction){
-  	    //PAGEREQUEST PREPARA AS REQUISICOES PARA FAZER A CONSULTA NO BANCO DE DADOS.
   		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction),
   				orderBy1,orderBy2 );
-  		//AQUI RETONA A PAGINA A PARTIR DO pageRequest.
   		return flightrepo.findAll(pageRequest);
   		
   	}
   	
-  	//METODO AUXILIAR QUE INSTANCIA UMA CATEGORIA A APARTIR DE UM DTO.
   	public Flight fromDTO(FlightDTO flightDto) {
   		return new Flight(flightDto.getId(), 
   				flightDto.getDepartureIn(), 
@@ -49,8 +46,7 @@ public class FlightService {
   				flightDto.getDestinationOut(), 
   				flightDto.getTimeDestinationOut(), 
   				flightDto.getDateOut());
-  		
-  	}
+  		}
   	
 	
 }
