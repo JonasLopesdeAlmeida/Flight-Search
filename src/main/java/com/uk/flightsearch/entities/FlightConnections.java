@@ -16,7 +16,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="FlightConnectios")
+@Table(name="FlightConnections")
 public class FlightConnections implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -30,9 +30,14 @@ public class FlightConnections implements Serializable{
     
     @JsonIgnore
     @ManyToMany
-	@JoinTable(name = "FlightConnections_to_Flights", joinColumns = @JoinColumn(name = "id_flightConnections"), inverseJoinColumns = @JoinColumn(name = "id_flight"))
-
-	private List<Flight> flights = new ArrayList<>();
+	@JoinTable(name = "FlightConnectionsin_to_FlightsIn", joinColumns = @JoinColumn(name = "id_flightConnectionsin"), inverseJoinColumns = @JoinColumn(name = "id_flightin"))
+	private List<FlightIn> flightin = new ArrayList<>();
+    
+    
+    @JsonIgnore
+    @ManyToMany
+	@JoinTable(name = "FlightConnectionsout_to_FlightsOut", joinColumns = @JoinColumn(name = "id_flightConnectionsout"), inverseJoinColumns = @JoinColumn(name = "id_flightout"))
+    private List<FlightOut> flightout = new ArrayList<>();
     
     public FlightConnections() {
     	
@@ -78,13 +83,23 @@ public class FlightConnections implements Serializable{
 		this.timeOut = timeOut;
 	}
 
-	public List<Flight> getFlights() {
-		return flights;
+	public List<FlightIn> getFlightin() {
+		return flightin;
 	}
 
-	public void setFlights(List<Flight> flights) {
-		this.flights = flights;
+	public void setFlightin(List<FlightIn> flightin) {
+		this.flightin= flightin;
 	}
+
+	public List<FlightOut> getFlightout() {
+		return flightout;
+	}
+
+	public void setFlightout(List<FlightOut> flightout) {
+		this.flightout = flightout;
+	}
+
+
 
 
 	

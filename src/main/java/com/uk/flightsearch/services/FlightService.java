@@ -3,12 +3,8 @@ package com.uk.flightsearch.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
-import com.uk.flightsearch.DTO.FlightDTO;
 import com.uk.flightsearch.entities.Flight;
 import com.uk.flightsearch.repositories.FlightRepository;
 import com.uk.flightsearch.services.exceptions.ObjectNotFoundException;
@@ -27,26 +23,7 @@ public class FlightService {
 		}
     
 
-  	public Page<Flight> findFlights(Integer page, Integer linesPerPage, String orderBy1,String orderBy2, String direction){
-  		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction),
-  				orderBy1,orderBy2 );
-  		return flightrepo.findAll(pageRequest);
-  		
-  	}
-  	
-  	public Flight fromDTO(FlightDTO flightDto) {
-  		return new Flight(flightDto.getId(), 
-  				flightDto.getDepartureIn(), 
-  				flightDto.getTimeDepartureIn(), 
-  				flightDto.getDestinationIn(), 
-  				flightDto.getTimeDestinationIn(), 
-  				flightDto.getDateIn(), 
-  				flightDto.getDepartureOut(), 
-  				flightDto.getTimeDepartureOut(), 
-  				flightDto.getDestinationOut(), 
-  				flightDto.getTimeDestinationOut(), 
-  				flightDto.getDateOut());
-  		}
+  
   	
 	
 }
