@@ -22,7 +22,7 @@ public class Flight implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name="flightin_id")
-	private FlightIn flightin;
+	private Flightin flightin;
 	
 	@ManyToOne
 	@JoinColumn(name="flightout_id")
@@ -35,7 +35,7 @@ public class Flight implements Serializable {
 	}
 
 
-	public Flight(Long id, FlightIn flightin, FlightOut flightout) {
+	public Flight(Long id, Flightin flightin, FlightOut flightout) {
 		super();
 		this.id = id;
 		this.flightin = flightin;
@@ -53,12 +53,12 @@ public class Flight implements Serializable {
 	}
 
 
-	public FlightIn getFlightin() {
+	public Flightin getFlightin() {
 		return flightin;
 	}
 
 
-	public void setFlightin(FlightIn flightin) {
+	public void setFlightin(Flightin flightin) {
 		this.flightin = flightin;
 	}
 

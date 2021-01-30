@@ -2,13 +2,13 @@ package com.uk.flightsearch.DTO;
 
 import java.io.Serializable;
 
-import com.uk.flightsearch.entities.FlightIn;
+import com.uk.flightsearch.entities.Flightin;
 
 public class FlightInNewDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String departureIn;
+	private String departurein;
 	
 	
 
@@ -16,19 +16,19 @@ public class FlightInNewDTO implements Serializable {
 
 	}
 
-	public FlightInNewDTO(FlightIn flightin) {
+	public FlightInNewDTO(Flightin flightin) {
 		
-		departureIn = flightin.getDepartureIn();
+		departurein = flightin.getDeparturein();
 		
 	}
 
 
-	public String getDepartureIn() {
-		return departureIn;
+	public String getDeparturein() {
+		return departurein;
 	}
 
-	public void setDepartureIn(String departureIn) {
-		this.departureIn = departureIn;
+	public void setDeparturein(String departurein) {
+		this.departurein = departurein;
 	}
 
 	

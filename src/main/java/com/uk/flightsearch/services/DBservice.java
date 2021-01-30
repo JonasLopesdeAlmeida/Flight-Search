@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.uk.flightsearch.entities.Flight;
 import com.uk.flightsearch.entities.FlightConnections;
-import com.uk.flightsearch.entities.FlightIn;
+import com.uk.flightsearch.entities.Flightin;
 import com.uk.flightsearch.entities.FlightOut;
 import com.uk.flightsearch.enums.FlightStatus;
 import com.uk.flightsearch.repositories.FlightConnectionsRepository;
@@ -36,15 +36,33 @@ public class DBservice {
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-		FlightIn fi1 = new FlightIn(null, "London Heathrow LHR", "06:30", "Dubai DXB", "21:30", sdf.parse("28/01/2021"),
+		Flightin fi1 = new Flightin(null, "London Heathrow LHR", "06:30", "Dubai DXB", "21:30", sdf.parse("28/01/2021"),
 				FlightStatus.CONFIRMED);
 		FlightOut fo1 = new FlightOut(null, "Dubai DXB", "07:30", "London Heathrow LHR", "23:10",
 				sdf.parse("02/02/2021"), FlightStatus.CONFIRMED);
-		FlightIn fi2 = new FlightIn(null, "Sweden ARN", "15:20", "London Heathrow LHR", "17:20",
+		Flightin fi2 = new Flightin(null, "Sweden ARN", "15:20", "London Heathrow LHR", "17:20",
 				sdf.parse("04/02/2021"), FlightStatus.CONFIRMED);
 		FlightOut fo2 = new FlightOut(null, "London Heathrow LHR", "07:30", "Sweden ARN", "09:30",
 				sdf.parse("09/02/2021"), FlightStatus.CONFIRMED);
 
+		
+		Flightin fi3 = new Flightin(null, "Manchester MAN", "04:20", "London Heathrow LHR", "06:20",
+				sdf.parse("06/02/2021"), FlightStatus.CONFIRMED);
+		Flightin fi4 = new Flightin(null, "Manchester MAN", "06:30", "London Heathrow LHR", "08:30",
+				sdf.parse("06/02/2021"), FlightStatus.CONFIRMED);
+		Flightin fi5 = new Flightin(null, "Manchester MAN", "09:30", "London Heathrow LHR", "11:30",
+				sdf.parse("05/02/2021"), FlightStatus.CONFIRMED);
+		
+		
+		Flightin fi6 = new Flightin(null, "Manchester MAN", "03:20", "London Heathrow LHR", "05:20",
+				sdf.parse("05/02/2021"), FlightStatus.CONFIRMED);
+		Flightin fi7 = new Flightin(null, "Manchester MAN", "11:00", "London Heathrow LHR", "13:00",
+				sdf.parse("05/02/2021"), FlightStatus.CONFIRMED);
+		Flightin fi8 = new Flightin(null, "Manchester MAN", "16:50", "London Heathrow LHR", "18:50",
+				sdf.parse("07/02/2021"), FlightStatus.CONFIRMED);
+		
+		
+		
 		FlightConnections fc1 = new FlightConnections(null, "Frankfurt FRA", "15:30", "16:30");
 		FlightConnections fc2 = new FlightConnections(null, "exemplo EX1", "18:30", "19:30");
 		FlightConnections fc3 = new FlightConnections(null, "Galeao GIG", "16:10", "16:20");
@@ -63,7 +81,7 @@ public class DBservice {
 		fc3.getFlightin().addAll(Arrays.asList(fi2));
 		fc4.getFlightout().addAll(Arrays.asList(fo2));
 
-		flightinrepo.saveAll(Arrays.asList(fi1, fi2));
+		flightinrepo.saveAll(Arrays.asList(fi1, fi2, fi3, fi4, fi5, fi6, fi7, fi8));
 		flightoutrepo.saveAll(Arrays.asList(fo1, fo2));
 		flightconnectionsrepo.saveAll(Arrays.asList(fc1, fc2, fc3, fc4));
 		flightrepo.saveAll(Arrays.asList(fl1, fl2));

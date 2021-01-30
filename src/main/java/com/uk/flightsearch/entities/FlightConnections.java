@@ -31,7 +31,7 @@ public class FlightConnections implements Serializable{
     @JsonIgnore
     @ManyToMany
 	@JoinTable(name = "FlightConnectionsin_to_FlightsIn", joinColumns = @JoinColumn(name = "id_flightConnectionsin"), inverseJoinColumns = @JoinColumn(name = "id_flightin"))
-	private List<FlightIn> flightin = new ArrayList<>();
+	private List<Flightin> flightin = new ArrayList<>();
     
     
     @JsonIgnore
@@ -83,11 +83,11 @@ public class FlightConnections implements Serializable{
 		this.timeOut = timeOut;
 	}
 
-	public List<FlightIn> getFlightin() {
+	public List<Flightin> getFlightin() {
 		return flightin;
 	}
 
-	public void setFlightin(List<FlightIn> flightin) {
+	public void setFlightin(List<Flightin> flightin) {
 		this.flightin= flightin;
 	}
 

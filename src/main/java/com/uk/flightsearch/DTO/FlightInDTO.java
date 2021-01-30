@@ -6,7 +6,7 @@ import java.util.Date;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
-import com.uk.flightsearch.entities.FlightIn;
+import com.uk.flightsearch.entities.Flightin;
 import com.uk.flightsearch.enums.FlightStatus;
 
 public class FlightInDTO implements Serializable {
@@ -14,11 +14,11 @@ public class FlightInDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
-	private String departureIn;
-	private String timeDepartureIn;
-	private String destinationIn;
-	private String timeDestinationIn;
-	private Date dateIn;
+	private String departurein;
+	private String timedeparturein;
+	private String destinationin;
+	private String timedestinationin;
+	private Date datein;
 	
 	@Enumerated(value = EnumType.STRING)
 	private FlightStatus flightstatus;
@@ -30,22 +30,17 @@ public class FlightInDTO implements Serializable {
 
 	}
 
-	public FlightInDTO(FlightIn flightin) {
+	public FlightInDTO(Flightin flightin) {
 		
 		id = flightin.getId();
-		departureIn = flightin.getDepartureIn();
-	    timeDepartureIn = flightin.getTimeDepartureIn();
-	    destinationIn = flightin.getDestinationIn();
-		timeDestinationIn = flightin.getTimeDestinationIn();
-        dateIn = flightin.getDateIn();
+		departurein = flightin.getDeparturein();
+	    timedeparturein = flightin.getTimedeparturein();
+	    destinationin = flightin.getDestinationin();
+		timedestinationin = flightin.getTimedestinationin();
+        datein = flightin.getDatein();
         flightstatus =  flightin.getFlightstatus();
         
-//        departureOut = flight.getDepartureOut();
-//        timeDepartureOut = flight.getTimeDepartureOut();
-//		destinationOut = flight.getDestinationOut();
-//		timeDestinationOut = flight.getDestinationOut();
-//		dateOut = flight.getDateOut();
-		
+
 	}
 
 	public Long getId() {
@@ -56,44 +51,46 @@ public class FlightInDTO implements Serializable {
 		this.id = id;
 	}
 
-	public String getDepartureIn() {
-		return departureIn;
+	
+
+	public String getDeparturein() {
+		return departurein;
 	}
 
-	public void setDepartureIn(String departureIn) {
-		this.departureIn = departureIn;
+	public void setDeparturein(String departurein) {
+		this.departurein = departurein;
 	}
 
-	public String getTimeDepartureIn() {
-		return timeDepartureIn;
+	public String getTimedeparturein() {
+		return timedeparturein;
 	}
 
-	public void setTimeDepartureIn(String timeDepartureIn) {
-		this.timeDepartureIn = timeDepartureIn;
+	public void setTimedeparturein(String timedeparturein) {
+		this.timedeparturein = timedeparturein;
 	}
 
-	public String getDestinationIn() {
-		return destinationIn;
+	public String getDestinationin() {
+		return destinationin;
 	}
 
-	public void setDestinationIn(String destinationIn) {
-		this.destinationIn = destinationIn;
+	public void setDestinationin(String destinationin) {
+		this.destinationin = destinationin;
 	}
 
-	public String getTimeDestinationIn() {
-		return timeDestinationIn;
+	public String getTimedestinationin() {
+		return timedestinationin;
 	}
 
-	public void setTimeDestinationIn(String timeDestinationIn) {
-		this.timeDestinationIn = timeDestinationIn;
+	public void setTimedestinationin(String timedestinationin) {
+		this.timedestinationin = timedestinationin;
 	}
 
-	public Date getDateIn() {
-		return dateIn;
+	public Date getDatein() {
+		return datein;
 	}
 
-	public void setDateIn(Date dateIn) {
-		this.dateIn = dateIn;
+	public void setDatein(Date datein) {
+		this.datein = datein;
 	}
 
 	public FlightStatus getFlightstatus() {

@@ -1,5 +1,6 @@
 package com.uk.flightsearch.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,47 +17,47 @@ import javax.persistence.Table;
 import com.uk.flightsearch.enums.FlightStatus;
 
 @Entity
-@Table(name= "FlightIn")
-public class FlightIn {
-	
+@Table(name = "Flightin")
+public class Flightin implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String departureIn;
-	private String timeDepartureIn;
-	private String destinationIn;
-	private String timeDestinationIn;
-	private Date dateIn;
+	private String departurein;
+	private String timedeparturein;
+	private String destinationin;
+	private String timedestinationin;
+	private Date datein;
 
 	@Enumerated(value = EnumType.STRING)
 	private FlightStatus flightstatus;
-	
+
 //	@JsonBackReference
-	@ManyToMany(mappedBy ="flightin")
+	@ManyToMany(mappedBy = "flightin")
 	private List<FlightConnections> flightconnectionsin = new ArrayList<>();
-	
-	
-	public FlightIn() {
-		
+
+	public Flightin() {
+
 	}
-	
-    public FlightIn(String departureIn ) {
-		this.departureIn = departureIn;
+
+	public Flightin(String departurein) {
+		this.departurein = departurein;
 	}
-	
-	
-	public FlightIn(Long id, String departureIn, String timeDepartureIn, String destinationIn, String timeDestinationIn,
-			Date dateIn, FlightStatus flightstatus) {
+
+	public Flightin(Long id, String departurein, String timedeparturein, String destinationin, String timedestinationin,
+			Date datein, FlightStatus flightstatus) {
 		super();
 		this.id = id;
-		this.departureIn = departureIn;
-		this.timeDepartureIn = timeDepartureIn;
-		this.destinationIn = destinationIn;
-		this.timeDestinationIn = timeDestinationIn;
-		this.dateIn = dateIn;
+		this.departurein = departurein;
+		this.timedeparturein = timedeparturein;
+		this.destinationin = destinationin;
+		this.timedestinationin = timedestinationin;
+		this.datein = datein;
 		this.flightstatus = flightstatus;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -65,44 +66,44 @@ public class FlightIn {
 		this.id = id;
 	}
 
-	public String getDepartureIn() {
-		return departureIn;
+	public String getDeparturein() {
+		return departurein;
 	}
 
-	public void setDepartureIn(String departureIn) {
-		this.departureIn = departureIn;
+	public void setDeparturein(String departurein) {
+		this.departurein = departurein;
 	}
 
-	public String getTimeDepartureIn() {
-		return timeDepartureIn;
+	public String getTimedeparturein() {
+		return timedeparturein;
 	}
 
-	public void setTimeDepartureIn(String timeDepartureIn) {
-		this.timeDepartureIn = timeDepartureIn;
+	public void setTimedeparturein(String timedeparturein) {
+		this.timedeparturein = timedeparturein;
 	}
 
-	public String getDestinationIn() {
-		return destinationIn;
+	public String getDestinationin() {
+		return destinationin;
 	}
 
-	public void setDestinationIn(String destinationIn) {
-		this.destinationIn = destinationIn;
+	public void setDestinationin(String destinationin) {
+		this.destinationin = destinationin;
 	}
 
-	public String getTimeDestinationIn() {
-		return timeDestinationIn;
+	public String getTimedestinationin() {
+		return timedestinationin;
 	}
 
-	public void setTimeDestinationIn(String timeDestinationIn) {
-		this.timeDestinationIn = timeDestinationIn;
+	public void setTimedestinationin(String timedestinationin) {
+		this.timedestinationin = timedestinationin;
 	}
 
-	public Date getDateIn() {
-		return dateIn;
+	public Date getDatein() {
+		return datein;
 	}
 
-	public void setDateIn(Date dateIn) {
-		this.dateIn = dateIn;
+	public void setDatein(Date datein) {
+		this.datein = datein;
 	}
 
 	public FlightStatus getFlightstatus() {
@@ -113,20 +114,12 @@ public class FlightIn {
 		this.flightstatus = flightstatus;
 	}
 
-
-
 	public List<FlightConnections> getFlightconnectionsin() {
 		return flightconnectionsin;
 	}
 
-
-
 	public void setFlightconnectionsin(List<FlightConnections> flightconnectionsin) {
 		this.flightconnectionsin = flightconnectionsin;
 	}
-
-
-	
-	
 
 }
