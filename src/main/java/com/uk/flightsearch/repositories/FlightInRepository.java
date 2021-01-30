@@ -20,11 +20,9 @@ public interface FlightInRepository extends JpaRepository<Flightin, Long> {
 	" SELECT DISTINCT datein, count(datein) AS quantity FROM Flightin WHERE departurein = 'Manchester MAN' group by datein order by quantity desc limit 1", nativeQuery=true)
 	Date date();
 	
-	//Page<Flightin>DateWithGreatestNumberOfDeparturesFromManchester(@Param("departurein") String departurein, Pageable pageRequest);
-   	
-	//@Query(value = "SELECT DISTINCT departurein FROM Flightin WHERE departurein LIKE %:departurein%")
+	
 	Page<Flightin>findDistinctByDeparturein(@Param("departurein") String departurein, Pageable pageRequest);
 
-	
-
+	@Query(value = "Select DISTINCT  (Count(destinationin)* 100 / (Select Count(*) From Flightin)) as Total From Flightin where destinationin = 'Sweden ARN' Group By destinationin")
+    Double percentage();
 }

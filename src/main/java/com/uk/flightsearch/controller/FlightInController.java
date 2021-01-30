@@ -37,6 +37,12 @@ public class FlightInController {
 		
 		return ResponseEntity.ok().body(flightin);
 	}
+	
+	@GetMapping(value="/percentage")
+	public ResponseEntity<String> findPercentage(){
+		Double flightin = flightinservice.getPercentageFromFlightsWithDeparturesForSweden();
+		return ResponseEntity.ok().body(flightin+"%");
+	}
 
 	@GetMapping("/page")
 	public ResponseEntity<Page<FlightInDTO>> findPage(

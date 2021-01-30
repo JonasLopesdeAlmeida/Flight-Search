@@ -46,15 +46,14 @@ public class DBservice {
 				sdf.parse("09/02/2021"), FlightStatus.CONFIRMED);
 
 		
-		Flightin fi3 = new Flightin(null, "Manchester MAN", "04:20", "London Heathrow LHR", "06:20",
+		Flightin fi3 = new Flightin(null, "Manchester MAN", "04:20", "Sweden ARN", "06:20",
 				sdf.parse("06/02/2021"), FlightStatus.CONFIRMED);
-		Flightin fi4 = new Flightin(null, "Manchester MAN", "06:30", "London Heathrow LHR", "08:30",
+		Flightin fi4 = new Flightin(null, "Manchester MAN", "06:30", "Sweden ARN", "08:30",
 				sdf.parse("06/02/2021"), FlightStatus.CONFIRMED);
-		Flightin fi5 = new Flightin(null, "Manchester MAN", "09:30", "London Heathrow LHR", "11:30",
+		Flightin fi5 = new Flightin(null, "Manchester MAN", "09:30", "Sweden ARN", "11:30",
 				sdf.parse("05/02/2021"), FlightStatus.CONFIRMED);
 		
-		
-		Flightin fi6 = new Flightin(null, "Manchester MAN", "03:20", "London Heathrow LHR", "05:20",
+		Flightin fi6 = new Flightin(null, "Manchester MAN", "03:20", "Sweden ARN", "05:20",
 				sdf.parse("05/02/2021"), FlightStatus.CONFIRMED);
 		Flightin fi7 = new Flightin(null, "Manchester MAN", "11:00", "London Heathrow LHR", "13:00",
 				sdf.parse("05/02/2021"), FlightStatus.CONFIRMED);

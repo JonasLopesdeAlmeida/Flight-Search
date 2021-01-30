@@ -60,4 +60,9 @@ public class FlightInService {
 		return obj;
 	}
 
+	public Double getPercentageFromFlightsWithDeparturesForSweden() {
+		Double obj = flighintrepo.percentage();
+		return  obj;
+		
+	}
 }
