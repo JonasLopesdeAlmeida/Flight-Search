@@ -36,11 +36,11 @@ public class FlightOutService {
   	public FlightOut fromDTO(FlightOut flightOutDto) {
   		return new FlightOut(
   				flightOutDto.getId(), 
-  				flightOutDto.getDepartureOut(), 
-  				flightOutDto.getTimeDepartureOut(), 
-  				flightOutDto.getDestinationOut(), 
-  				flightOutDto.getTimeDestinationOut(), 
-  				flightOutDto.getDateOut(),
+  				flightOutDto.getDepartureout(), 
+  				flightOutDto.getTimedepartureout(), 
+  				flightOutDto.getDestinationout(), 
+  				flightOutDto.getTimedestinationout(), 
+  				flightOutDto.getDateout(),
   				flightOutDto.getFlightstatus());
   		}
   	

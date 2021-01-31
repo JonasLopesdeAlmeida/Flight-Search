@@ -1,6 +1,5 @@
 package com.uk.flightsearch.controller;
 
-import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.Date;
 
@@ -44,6 +43,13 @@ public class FlightInController {
 	@GetMapping(value="/percentage")
 	public ResponseEntity<String> findPercentage(){
 		Double flightin = flightinservice.getPercentageFromFlightsWithDeparturesForSweden();
+		return ResponseEntity.ok().body(flightin+"%");
+	}
+	
+	
+	@GetMapping(value="/canceled")
+	public ResponseEntity<String> findPercentageCanceled(){
+		Double flightin = flightinservice.getPercentageFromFlightsWithDeparturesForLondonWithFlightStatusCanceled();
 		return ResponseEntity.ok().body(flightin+"%");
 	}
 	

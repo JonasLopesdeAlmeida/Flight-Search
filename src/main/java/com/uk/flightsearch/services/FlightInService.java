@@ -57,6 +57,7 @@ public class FlightInService {
 
 	public Date getDateWithGreatestNumberOfDeparturesFromManchester() {
 		Date obj = flighintrepo.date();
+		
 		return obj;
 	}
 
@@ -74,6 +75,13 @@ public class FlightInService {
 	    String objformated = obj.substring(1, obj.length()-7);  
 		
 		return objformated ;
+		
+	}
+	
+	
+	public Double getPercentageFromFlightsWithDeparturesForLondonWithFlightStatusCanceled() {
+		Double obj = flighintrepo.percentagecanceled();
+		return  obj;
 		
 	}
 

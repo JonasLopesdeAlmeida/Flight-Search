@@ -24,9 +24,9 @@ public class FlightConnections implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String airportDeparture;
-    private String timeIn;
-    private String timeOut;
+    private String airportdeparture;
+    private String timein;
+    private String timeout;
     
     @JsonIgnore
     @ManyToMany
@@ -43,13 +43,17 @@ public class FlightConnections implements Serializable{
     	
     }
 
-	public FlightConnections(Long id, String airportDeparture, String timeIn, String timeOut) {
+	
+
+	public FlightConnections(Long id, String airportdeparture, String timein, String timeout) {
 		super();
 		this.id = id;
-		this.airportDeparture = airportDeparture;
-		this.timeIn = timeIn;
-		this.timeOut = timeOut;
+		this.airportdeparture = airportdeparture;
+		this.timein = timein;
+		this.timeout = timeout;
 	}
+
+
 
 	public Long getId() {
 		return id;
@@ -59,29 +63,42 @@ public class FlightConnections implements Serializable{
 		this.id = id;
 	}
 
-	public String getAirportDeparture() {
-		return airportDeparture;
+	
+	public String getAirportdeparture() {
+		return airportdeparture;
 	}
 
-	public void setAirportDeparture(String airportDeparture) {
-		this.airportDeparture = airportDeparture;
+
+
+	public void setAirportdeparture(String airportdeparture) {
+		this.airportdeparture = airportdeparture;
 	}
 
-	public String getTimeIn() {
-		return timeIn;
+
+
+	public String getTimein() {
+		return timein;
 	}
 
-	public void setTimeIn(String timeIn) {
-		this.timeIn = timeIn;
+
+
+	public void setTimein(String timein) {
+		this.timein = timein;
 	}
 
-	public String getTimeOut() {
-		return timeOut;
+
+
+	public String getTimeout() {
+		return timeout;
 	}
 
-	public void setTimeOut(String timeOut) {
-		this.timeOut = timeOut;
+
+
+	public void setTimeout(String timeout) {
+		this.timeout = timeout;
 	}
+
+
 
 	public List<Flightin> getFlightin() {
 		return flightin;

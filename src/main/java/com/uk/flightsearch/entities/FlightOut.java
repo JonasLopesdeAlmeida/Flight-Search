@@ -25,11 +25,11 @@ public class FlightOut implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String departureOut;
-	private String timeDepartureOut;
-	private String destinationOut;
-	private String timeDestinationOut;
-	private Date dateOut;
+	private String departureout;
+	private String timedepartureout;
+	private String destinationout;
+	private String timedestinationout;
+	private Date dateout;
 
 	@Enumerated(value = EnumType.STRING)
 	private FlightStatus flightstatus;
@@ -41,65 +41,91 @@ public class FlightOut implements Serializable {
 
 	}
 
-	public FlightOut(Long id, String departureOut, String timeDepartureOut, String destinationOut,
-			String timeDestinationOut, Date dateOut, FlightStatus flightstatus) {
-		super();
-		this.id = id;
-		this.departureOut = departureOut;
-		this.timeDepartureOut = timeDepartureOut;
-		this.destinationOut = destinationOut;
-		this.timeDestinationOut = timeDestinationOut;
-		this.dateOut = dateOut;
-		this.flightstatus = flightstatus;
-	}
+	
 
 	public Long getId() {
 		return id;
 	}
 
+	public FlightOut(Long id, String departureout, String timedepartureout, String destinationout,
+			String timedestinationout, Date dateout, FlightStatus flightstatus) {
+		super();
+		this.id = id;
+		this.departureout = departureout;
+		this.timedepartureout = timedepartureout;
+		this.destinationout = destinationout;
+		this.timedestinationout = timedestinationout;
+		this.dateout = dateout;
+		this.flightstatus = flightstatus;
+	}
+
+
+
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getDepartureOut() {
-		return departureOut;
+	
+
+	public String getDepartureout() {
+		return departureout;
 	}
 
-	public void setDepartureOut(String departureOut) {
-		this.departureOut = departureOut;
+
+
+	public void setDepartureout(String departureout) {
+		this.departureout = departureout;
 	}
 
-	public String getTimeDepartureOut() {
-		return timeDepartureOut;
+
+
+	public String getTimedepartureout() {
+		return timedepartureout;
 	}
 
-	public void setTimeDepartureOut(String timeDepartureOut) {
-		this.timeDepartureOut = timeDepartureOut;
+
+
+	public void setTimedepartureout(String timedepartureout) {
+		this.timedepartureout = timedepartureout;
 	}
 
-	public String getDestinationOut() {
-		return destinationOut;
+
+
+	public String getDestinationout() {
+		return destinationout;
 	}
 
-	public void setDestinationOut(String destinationOut) {
-		this.destinationOut = destinationOut;
+
+
+	public void setDestinationout(String destinationout) {
+		this.destinationout = destinationout;
 	}
 
-	public String getTimeDestinationOut() {
-		return timeDestinationOut;
+
+
+	public String getTimedestinationout() {
+		return timedestinationout;
 	}
 
-	public void setTimeDestinationOut(String timeDestinationOut) {
-		this.timeDestinationOut = timeDestinationOut;
+
+
+	public void setTimedestinationout(String timedestinationout) {
+		this.timedestinationout = timedestinationout;
 	}
 
-	public Date getDateOut() {
-		return dateOut;
+
+
+	public Date getDateout() {
+		return dateout;
 	}
 
-	public void setDateOut(Date dateOut) {
-		this.dateOut = dateOut;
+
+
+	public void setDateout(Date dateout) {
+		this.dateout = dateout;
 	}
+
+
 
 	public FlightStatus getFlightstatus() {
 		return flightstatus;

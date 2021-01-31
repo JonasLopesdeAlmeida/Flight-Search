@@ -30,5 +30,6 @@ public interface FlightInRepository extends JpaRepository<Flightin, Long> {
 	@Query(value = "Select DISTINCT  (Count(destinationin)* 100 / (Select Count(*) From Flightin)) as Total From Flightin where destinationin = 'Sweden ARN' Group By destinationin")
     Double percentage();
 
-	//Double getTimeDepartureIn(Date timedeparturein);
+	@Query(value = "Select DISTINCT  (Count(destinationin)* 100 / (Select Count(*) From Flightin)) as Total From Flightin where destinationin = 'London Heathrow LHR' and datein = '2021-02-09' and flightstatus = 'CANCELED' Group By destinationin")
+	Double percentagecanceled();
 }
