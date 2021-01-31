@@ -65,4 +65,16 @@ public class FlightInService {
 		return  obj;
 		
 	}
+	
+	public String getTimeDiference() {
+		
+		String obj = flighintrepo.getTimeDiferenceFromDepartureInToDestinationin();
+	  
+		//taking the first and seven last char off.
+	    String objformated = obj.substring(1, obj.length()-7);  
+		
+		return objformated ;
+		
+	}
+
 }

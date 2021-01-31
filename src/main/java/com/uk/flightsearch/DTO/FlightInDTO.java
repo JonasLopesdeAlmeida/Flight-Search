@@ -34,9 +34,9 @@ public class FlightInDTO implements Serializable {
 		
 		id = flightin.getId();
 		departurein = flightin.getDeparturein();
-	    timedeparturein = flightin.getTimedeparturein();
+	    //timedeparturein = flightin.getTimedeparturein();
 	    destinationin = flightin.getDestinationin();
-		timedestinationin = flightin.getTimedestinationin();
+		//timedestinationin = flightin.getTimedestinationin();
         datein = flightin.getDatein();
         flightstatus =  flightin.getFlightstatus();
         

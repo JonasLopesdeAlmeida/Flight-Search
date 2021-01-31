@@ -36,7 +36,7 @@ public class DBservice {
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-		Flightin fi1 = new Flightin(null, "London Heathrow LHR", "06:30", "Dubai DXB", "21:30", sdf.parse("28/01/2021"),
+		Flightin fi1 = new Flightin(null, "London Heathrow LHR", "06:35:35", "Dubai DXB", "21:58:48", sdf.parse("28/01/2021"),
 				FlightStatus.CONFIRMED);
 		FlightOut fo1 = new FlightOut(null, "Dubai DXB", "07:30", "London Heathrow LHR", "23:10",
 				sdf.parse("02/02/2021"), FlightStatus.CONFIRMED);

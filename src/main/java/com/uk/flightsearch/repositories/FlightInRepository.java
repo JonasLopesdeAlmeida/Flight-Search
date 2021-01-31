@@ -15,6 +15,10 @@ import com.uk.flightsearch.entities.Flightin;
 public interface FlightInRepository extends JpaRepository<Flightin, Long> {
 
 
+	@Query(value = "  SELECT CONCAT(timediff(timedeparturein,timedestinationin),'') FROM Flightin WHERE id = 1", nativeQuery=true)
+	String getTimeDiferenceFromDepartureInToDestinationin();
+    
+
 	
 	@Query(value = 
 	" SELECT DISTINCT datein, count(datein) AS quantity FROM Flightin WHERE departurein = 'Manchester MAN' group by datein order by quantity desc limit 1", nativeQuery=true)
@@ -25,4 +29,6 @@ public interface FlightInRepository extends JpaRepository<Flightin, Long> {
 
 	@Query(value = "Select DISTINCT  (Count(destinationin)* 100 / (Select Count(*) From Flightin)) as Total From Flightin where destinationin = 'Sweden ARN' Group By destinationin")
     Double percentage();
+
+	//Double getTimeDepartureIn(Date timedeparturein);
 }

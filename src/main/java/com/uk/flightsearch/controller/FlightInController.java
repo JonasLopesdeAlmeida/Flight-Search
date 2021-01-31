@@ -1,5 +1,7 @@
 package com.uk.flightsearch.controller;
 
+import java.math.BigDecimal;
+import java.text.ParseException;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,10 +40,21 @@ public class FlightInController {
 		return ResponseEntity.ok().body(flightin);
 	}
 	
+	
 	@GetMapping(value="/percentage")
 	public ResponseEntity<String> findPercentage(){
 		Double flightin = flightinservice.getPercentageFromFlightsWithDeparturesForSweden();
 		return ResponseEntity.ok().body(flightin+"%");
+	}
+	
+	
+	@GetMapping(value="/time")
+	public ResponseEntity<String> findTime() throws ParseException{
+		
+		String flightin = flightinservice.getTimeDiference();
+		
+	
+		return ResponseEntity.ok().body(flightin + "");
 	}
 
 	@GetMapping("/page")
